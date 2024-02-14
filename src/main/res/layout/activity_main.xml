@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="randomNum"
+            type="String" />
+    </data>
+    
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/lower_bound"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="250dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="1"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gen_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/upper_bound"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="250dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gen_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="176dp"
+        android:textSize="80sp"
+        android:textColor="@android:color/black"
+        android:text="@{randomNum}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/gen_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/ic_dice"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="50dp"
+        app:showMotionSpec="@android:anim/fade_in"
+        app:hideMotionSpec="@android:anim/fade_out"
+        app:rippleColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/upper_bound"
+        app:layout_constraintStart_toEndOf="@+id/lower_bound"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:layout_constraintVertical_bias="0.16000003" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
